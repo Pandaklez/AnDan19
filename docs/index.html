@@ -1526,8 +1526,7 @@ library(nlme)</code></pre>
 <pre><code>## The following object is masked from &#39;package:lme4&#39;:
 ## 
 ##     lmList</code></pre>
-<div id="section" class="section level1">
-<h1>Домашнее задание по смешанным моделям</h1>
+<p>Примечание: если Вы вдруг забыли ggplot: <a href="https://www.rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf" class="uri">https://www.rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf</a> <a href="https://ggplot2.tidyverse.org/reference/index.html" class="uri">https://ggplot2.tidyverse.org/reference/index.html</a></p>
 <div id="gpa-dataset" class="section level2">
 <h2>GPA dataset</h2>
 <pre class="r"><code># https://github.com/m-clark/mixed-models-with-R/tree/master/data
@@ -1545,8 +1544,7 @@ load(&#39;gpa.RData&#39;)</code></pre>
 <h2>Orthodont data</h2>
 <p>Описание датасета Orthodont:</p>
 <p>Каждые два года замерялось какое-то расстояние в ротовой полости у одних и тех же людей (27 детей, 16 мальчиков и 11 девочек).</p>
-<pre class="r"><code>help(Orthodont)</code></pre>
-<pre><code>## starting httpd help server ... done</code></pre>
+<pre class="r"><code># help(Orthodont)</code></pre>
 <pre class="r"><code>data(&quot;Orthodont&quot;, package=&quot;nlme&quot;)
 head(Orthodont)</code></pre>
 <pre><code>## Grouped Data: distance ~ age | Subject
@@ -1566,6 +1564,22 @@ head(Orthodont)</code></pre>
 <li><p>Постройте lmer(), который на ваш взгляд лучше всего будет описывать эти данные. Можно построить несколько смешанных моделей и сравнить их с помощью anova(), чтобы показать, какая моедль самая лучшая. (Тут можно построить аж 16 моделей)</p></li>
 </ol>
 </div>
+<div id="machines-data" class="section level2">
+<h2>Machines data</h2>
+<p>Описание датасета: Six workers were chosen randomly among the employees of a factory to operate each machine three times. The response is an overall productivity score taking into account the number and quality of components produced.</p>
+<p>Тоже зафитить несколько lmer и выбрать наилучшую модель.</p>
+<pre class="r"><code>data(Machines, package=&quot;nlme&quot;)
+Machines$Worker &lt;- factor(Machines$Worker, levels=unique(Machines$Worker))
+
+head(Machines)</code></pre>
+<pre><code>## Grouped Data: score ~ Machine | Worker
+##   Worker Machine score
+## 1      1       A  52.0
+## 2      1       A  52.8
+## 3      1       A  53.1
+## 4      2       A  51.8
+## 5      2       A  52.8
+## 6      2       A  53.1</code></pre>
 </div>
 
 
