@@ -16,6 +16,9 @@ library(ggplot2)
 library(nlme)
 ```
 
+Примечание: если Вы вдруг забыли ggplot: https://www.rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf
+https://ggplot2.tidyverse.org/reference/index.html
+
 ## GPA dataset
 
 ```{r}
@@ -65,5 +68,20 @@ head(Orthodont)
 5) Но мы уже знаем, что всё не так просто и линейной регрессии недостаточно, потому что есть repeated measurements.Постройте график, который показывает зависимость distance от age, но при этом наблюдения по одному и тому же человеку соединены линией. Так будет видно, что есть repeated measurements.
 
 6) Постройте lmer(), который на ваш взгляд лучше всего будет описывать эти данные. Можно построить несколько смешанных моделей и сравнить их с помощью anova(), чтобы показать, какая моедль самая лучшая. (Тут можно построить аж 16 моделей)
+
+## Machines data
+
+Описание датасета: Six workers were chosen randomly among the employees of a factory to operate each machine three times. The response is an overall productivity score taking into account the number and quality of components produced.
+
+Тоже зафитить несколько lmer и выбрать наилучшую модель.
+```{r}
+data(Machines, package="nlme")
+Machines$Worker <- factor(Machines$Worker, levels=unique(Machines$Worker))
+
+head(Machines)
+```
+
+
+
 
 
