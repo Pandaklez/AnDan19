@@ -1,0 +1,23 @@
+name: 'Школа по анализу фонетических данных'
+navbar:
+  left:
+  - text: mixed models hw
+    href: index.html
+  - text: mixed models seminar
+    href: 1_math.html
+  - text: nested models seminar
+    href: 2_stats.html
+  - text: more
+    href: 3_spectrum_vowels.html
+output_dir: docs
+output:
+  html_document:
+    theme: spacelab
+    highlight: pygments
+    toc: yes
+    toc_depth: 2
+    toc_float: yes
+    smooth_scroll: no
+    code_folding: hide
+    df_print: paged
+    self_contained: yes
