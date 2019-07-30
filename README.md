@@ -1,2 +1,2 @@
 # AnDan19
-Mixed models course
+Mixed models course  ---  https://pandaklez.github.io/AnDan19/.
